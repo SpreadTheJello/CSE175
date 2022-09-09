@@ -69,14 +69,17 @@ class RoadMap:
         count = 1
         totalcost = 0
 
+        if(path_cost != None):
+            totalcost = path_cost
+
         while (count < len(road_list)):    
             temp = path
             path = self.road_dict.get(path, {}).get(road_list[count])
-            path_cost = self.connection_dict.get(path, {}).get(temp)
+            path_cost = self.connection_dict.get(temp, {}).get(path)
             if (path_cost != None):
                 totalcost += float(path_cost)
             else:
-                path_cost = 0
+                return 0
             count += 1
 
         return ("%.2f" % totalcost)
