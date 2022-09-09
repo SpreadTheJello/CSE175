@@ -9,6 +9,7 @@
 #
 # PLACE YOUR NAME AND ANY ACKNOWLEDGMENTS HERE
 # Angelo Fatali 
+# Figured out how to access key in nested dict here: https://stackoverflow.com/questions/25833613/safe-method-to-get-value-of-nested-dictionary
 
 
 class RoadMap:
