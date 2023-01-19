@@ -19,8 +19,8 @@ import sys
 import vars
 from route import RoadMap
 from route import RouteProblem
-import bfs
-import dfs
+import bfs1
+import dfs1
 
 
 start_location = 'home'
@@ -166,7 +166,7 @@ def main():
     problem = RouteProblem(test_map, start_location, goal_location)
     print("TESTING BFS WITHOUT REPEATED STATE CHECKING")
     vars.node_expansion_count = 0
-    sol = bfs.BFS(problem, False)
+    sol = bfs1.BFS(problem, False)
     print("Solution:")
     if sol is None:
         print("No solution found.")
@@ -179,7 +179,7 @@ def main():
         print("Number of Node Expansions =", vars.node_expansion_count)
     print("TESTING BFS WITH REPEATED STATE CHECKING")
     vars.node_expansion_count = 0
-    sol = bfs.BFS(problem, True)
+    sol = bfs1.BFS(problem, True)
     print("Solution:")
     if sol is None:
         print("No solution found.")
@@ -192,7 +192,7 @@ def main():
         print("Number of Node Expansions =", vars.node_expansion_count)
     print("TESTING DFS WITHOUT REPEATED STATE CHECKING")
     vars.node_expansion_count = 0
-    sol = dfs.DFS(problem, False)
+    sol = dfs1.DFS(problem, False)
     print("Solution:")
     if sol is None:
         print("No solution found.")
@@ -205,7 +205,7 @@ def main():
         print("Number of Node Expansions =", vars.node_expansion_count)
     print("TESTING DFS WITH REPEATED STATE CHECKING")
     vars.node_expansion_count = 0
-    sol = dfs.DFS(problem, True)
+    sol = dfs1.DFS(problem, True)
     print("Solution:")
     if sol is None:
         print("No solution found.")
